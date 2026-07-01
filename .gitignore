@@ -36,3 +36,6 @@ Thumbs.db
 .pptx
 .docx
 .md
+
+# Node.js
+node_modules/
