@@ -1,0 +1,55 @@
+{
+  "components": {
+    "nitrogen": {
+      "cas_number": "7727-37-9",
+      "formula": "N2",
+      "molecular_weight_g_mol": 28.013,
+      "critical_temperature_k": 126.2,
+      "critical_pressure_bar": 33.9,
+      "acentric_factor": 0.037,
+      "normal_boiling_point_k": 77.36,
+      "antoine_coefficients": {
+        "A": 3.7362,
+        "B": 264.651,
+        "C": -6.788,
+        "temp_min_k": 63.0,
+        "temp_max_k": 126.0
+      },
+      "comment": "Supercritical at standard ambient operating conditions; defaults to an ideal non-condensable gas step-out."
+    },
+    "propylene": {
+      "cas_number": "115-07-1",
+      "formula": "C3H6",
+      "molecular_weight_g_mol": 42.081,
+      "critical_temperature_k": 364.9,
+      "critical_pressure_bar": 46.0,
+      "acentric_factor": 0.144,
+      "normal_boiling_point_k": 225.45,
+      "antoine_coefficients": {
+        "A": 3.9561,
+        "B": 789.624,
+        "C": -26.15,
+        "temp_min_k": 160.0,
+        "temp_max_k": 240.0
+      },
+      "comment": "Primary target monomer component for recovery loops coming off the PPB purge stream."
+    },
+    "propane": {
+      "cas_number": "74-98-6",
+      "formula": "C3H8",
+      "molecular_weight_g_mol": 44.096,
+      "critical_temperature_k": 369.8,
+      "critical_pressure_bar": 42.5,
+      "acentric_factor": 0.152,
+      "normal_boiling_point_k": 231.05,
+      "antoine_coefficients": {
+        "A": 3.9291,
+        "B": 803.998,
+        "C": -26.11,
+        "temp_min_k": 165.0,
+        "temp_max_k": 250.0
+      },
+      "comment": "Trace paraffin alkane impurity present within the polymerization recycle loops."
+    }
+  }
+}

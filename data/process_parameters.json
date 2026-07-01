@@ -1,0 +1,166 @@
+{
+  "separation_parameters": {
+    "membrane": {
+      "materials": [
+        {
+          "name": "Polyimide Hollow-Fiber",
+          "skin_thickness_microns": 0.1,
+          "p_discharge_bar": 26.0,
+          "permeate_pressure_bar": 1.2,
+          "component_permeabilities_barrer": {
+            "nitrogen": 0.25,
+            "propylene": 15.0,
+            "propane": 3.5
+          },
+          "design_limits": {
+            "max_temperature_c": 60.0,
+            "min_stage_cut": 0.05,
+            "max_stage_cut": 0.35
+          }
+        },
+        {
+          "name": "Cellulose Acetate",
+          "skin_thickness_microns": 0.2,
+          "p_discharge_bar": 20.0,
+          "permeate_pressure_bar": 1.0,
+          "component_permeabilities_barrer": {
+            "nitrogen": 0.15,
+            "propylene": 12.0,
+            "propane": 2.8
+          },
+          "design_limits": {
+            "max_temperature_c": 50.0,
+            "min_stage_cut": 0.04,
+            "max_stage_cut": 0.30
+          }
+        },
+        {
+          "name": "PDMS Composite",
+          "skin_thickness_microns": 0.05,
+          "p_discharge_bar": 25.0,
+          "permeate_pressure_bar": 1.2,
+          "component_permeabilities_barrer": {
+            "nitrogen": 0.30,
+            "propylene": 20.0,
+            "propane": 5.0
+          },
+          "design_limits": {
+            "max_temperature_c": 80.0,
+            "min_stage_cut": 0.06,
+            "max_stage_cut": 0.40
+          }
+        }
+      ]
+    },
+    "adsorption_psa": {
+      "adsorbents": [
+        {
+          "name": "Activated Carbon / Zeolite 13X Dual Layer",
+          "bed_bulk_density_kg_m3": 510.0,
+          "cycle_time_minutes": 10.0,
+          "operating_pressures_bar": {
+            "adsorption_high": 25.0,
+            "desorption_low": 1.2
+          },
+          "extended_langmuir_isotherm": {
+            "nitrogen":  { "qm_mol_kg": 1.15, "b_bar_inv": 0.045 },
+            "propylene": { "qm_mol_kg": 4.65, "b_bar_inv": 2.250 },
+            "propane":   { "qm_mol_kg": 4.80, "b_bar_inv": 1.950 }
+          }
+        },
+        {
+          "name": "Zeolite 5A",
+          "bed_bulk_density_kg_m3": 600.0,
+          "cycle_time_minutes": 8.0,
+          "operating_pressures_bar": {
+            "adsorption_high": 22.0,
+            "desorption_low": 1.0
+          },
+          "extended_langmuir_isotherm": {
+            "nitrogen":  { "qm_mol_kg": 1.00, "b_bar_inv": 0.050 },
+            "propylene": { "qm_mol_kg": 4.20, "b_bar_inv": 2.000 },
+            "propane":   { "qm_mol_kg": 4.50, "b_bar_inv": 1.800 }
+          }
+        },
+        {
+          "name": "Silica Gel",
+          "bed_bulk_density_kg_m3": 450.0,
+          "cycle_time_minutes": 12.0,
+          "operating_pressures_bar": {
+            "adsorption_high": 20.0,
+            "desorption_low": 1.2
+          },
+          "extended_langmuir_isotherm": {
+            "nitrogen":  { "qm_mol_kg": 0.80, "b_bar_inv": 0.030 },
+            "propylene": { "qm_mol_kg": 3.50, "b_bar_inv": 1.500 },
+            "propane":   { "qm_mol_kg": 3.80, "b_bar_inv": 1.400 }
+          }
+        }
+      ]
+    },
+    "absorption": {
+      "solvents": [
+        {
+          "name": "Heavy Hydrocarbon Liquid Absorber Oil",
+          "solvent_density_kg_m3": 800.0,
+          "packing_type": "Structured Metallic Packing (Mellapak 250Y)",
+          "feed_cooler_outlet_temp_c": 35.0,
+          "liquid_to_gas_min_ratio_l_v": 1.45,
+          "henry_constants_bar_mole_fraction": {
+            "reference_temp_k": 308.15,
+            "delta_h_sol_k": 2200.0,
+            "nitrogen":   1250.0,
+            "propylene":  8.2,
+            "propane":    6.8
+          },
+          "souders_brown_c_factor": 0.30,
+          "flooding_derating": 0.72,
+          "design_limits": {
+            "max_gas_velocity_m_s": 0.35,
+            "target_flooding_percent": 72.0
+          }
+        },
+        {
+          "name": "Selexol (Dimethyl Ether of Polyethylene Glycol)",
+          "solvent_density_kg_m3": 1020.0,
+          "packing_type": "Random Packing (Raschig Rings)",
+          "feed_cooler_outlet_temp_c": 30.0,
+          "liquid_to_gas_min_ratio_l_v": 1.60,
+          "henry_constants_bar_mole_fraction": {
+            "reference_temp_k": 308.15,
+            "delta_h_sol_k": 2500.0,
+            "nitrogen":   1400.0,
+            "propylene":  7.5,
+            "propane":    6.0
+          },
+          "souders_brown_c_factor": 0.28,
+          "flooding_derating": 0.70,
+          "design_limits": {
+            "max_gas_velocity_m_s": 0.32,
+            "target_flooding_percent": 70.0
+          }
+        },
+        {
+          "name": "NMP (N-Methyl-2-Pyrrolidone)",
+          "solvent_density_kg_m3": 1030.0,
+          "packing_type": "Structured Packing (Mellapak 350Y)",
+          "feed_cooler_outlet_temp_c": 25.0,
+          "liquid_to_gas_min_ratio_l_v": 1.50,
+          "henry_constants_bar_mole_fraction": {
+            "reference_temp_k": 308.15,
+            "delta_h_sol_k": 2100.0,
+            "nitrogen":   1300.0,
+            "propylene":  9.0,
+            "propane":    7.0
+          },
+          "souders_brown_c_factor": 0.29,
+          "flooding_derating": 0.71,
+          "design_limits": {
+            "max_gas_velocity_m_s": 0.34,
+            "target_flooding_percent": 71.0
+          }
+        }
+      ]
+    }
+  }
+}

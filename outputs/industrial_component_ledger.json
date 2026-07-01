@@ -1,0 +1,346 @@
+{
+  "project": "HCRecov",
+  "version": "1.0",
+  "summary": {
+    "title": "HCRecov Industrial Sizing Ledger",
+    "subtitle": "Purge Stream Analysis \u2014 Basis: 650.0 kg/hr",
+    "date": "June 2026",
+    "scope": "Industrial Unit-Level First-Principles Assessment",
+    "plant": "HCRecov Demonstration Plant",
+    "prepared_by": "HCRecov Engineering Team",
+    "findings": [
+      "Membrane-based recovery offers the highest net monomer recovery at the stated feed conditions.",
+      "PSA remains a competitive alternative where a higher-pressure swing structure is acceptable.",
+      "Absorption is the most conservative option but carries the highest solvent-handling burden."
+    ],
+    "recommendation": "Advance the membrane-based option for pilot confirmation, with PSA retained as the secondary fallback path."
+  },
+  "feed": {
+    "feed_mass_kg_hr": 650.0,
+    "p_feed_bar": 1.2,
+    "t_feed_k": 337.15,
+    "y_n2": 0.95,
+    "y_hc": 0.05
+  },
+  "meta_engine": {
+    "title": "HCRecov Industrial Sizing Ledger",
+    "basis_flow_kg_hr": 650.0,
+    "calculated_volumetric_flow_m3_hr": 528.81
+  },
+  "chart_data": {
+    "technologies": [
+      "Membrane",
+      "PSA",
+      "Absorption"
+    ],
+    "efficiencies": [
+      78.5,
+      76.2,
+      72.8
+    ],
+    "capex_inr": [
+      137775000.0,
+      118570000.0,
+      93520000.0
+    ],
+    "target_pct": 90
+  },
+  "matrix": {
+    "headers": [
+      "Criterion",
+      "Membrane",
+      "PSA",
+      "Absorption"
+    ],
+    "rows": [
+      {
+        "criterion": "Net Recovery",
+        "values": [
+          "YES",
+          "YES",
+          "YES"
+        ]
+      },
+      {
+        "criterion": "Lower CAPEX",
+        "values": [
+          "NO",
+          "NO",
+          "YES"
+        ]
+      },
+      {
+        "criterion": "Recommended",
+        "values": [
+          "YES",
+          "NO",
+          "NO"
+        ]
+      }
+    ]
+  },
+  "ledgers": {
+    "membrane": {
+      "title": "Polymeric Membrane Separation",
+      "rows": [
+        {
+          "component": "Feed Suction Knock-Out Drum",
+          "rating": "ASME Sec VIII Div 1, Vert Shell (600mm x 2.0m)",
+          "max_capacity": "740.3 Am3/hr limit",
+          "used_capacity": "528.8 Am3/hr",
+          "flow_rate": "650.0 kg/hr",
+          "pressure_drop": "0.02 bar",
+          "capex": 462000.00000000006,
+          "opex": 6.475,
+          "efficiency": "Estimated recovery contribution 78.5% with Feed Suction Knock-Out Drum sized for the stated duty."
+        },
+        {
+          "component": "Feed Gas Booster Compressor",
+          "rating": "API 619 Oil-Injected Screw Process Package",
+          "max_capacity": "110.0 kW Motor limit",
+          "used_capacity": "67.4 kW Shaft Work",
+          "flow_rate": "650.0 kg/hr",
+          "pressure_drop": "-15.0 bar (Pressurize)",
+          "capex": 594000.0000000001,
+          "opex": 7.955,
+          "efficiency": "Estimated recovery contribution 78.5% with Feed Gas Booster Compressor sized for the stated duty."
+        },
+        {
+          "component": "Coalescing Pre-Filter Element",
+          "rating": "0.5 Micron High-Pressure Particulate Shell",
+          "max_capacity": "60.7 Am3/hr limit",
+          "used_capacity": "39.2 Am3/hr",
+          "flow_rate": "650.0 kg/hr",
+          "pressure_drop": "0.15 bar",
+          "capex": 726000.0000000001,
+          "opex": 9.435,
+          "efficiency": "Estimated recovery contribution 78.5% with Coalescing Pre-Filter Element sized for the stated duty."
+        },
+        {
+          "component": "Polyimide Membrane Separator Skids",
+          "rating": "ASME Multi-Tube Module Housing (14 Elements)",
+          "max_capacity": "560.0 m2 Bank Barrier Matrix",
+          "used_capacity": "537.6 m2 Active Area",
+          "flow_rate": "Retentate: 604.4 kg/hr\nPermeate: 45.6 kg/hr",
+          "pressure_drop": "15.00 bar (Trans-membrane)",
+          "capex": 858000.0,
+          "opex": 10.915,
+          "efficiency": "Estimated recovery contribution 78.5% with Polyimide Membrane Separator Skids sized for the stated duty."
+        }
+      ],
+      "capex_total": 1650000,
+      "opex_total": 18.5,
+      "recovery_pct": 78.5
+    },
+    "adsorption": {
+      "title": "Pressure-Swing Adsorption",
+      "rows": [
+        {
+          "component": "Duplex Guard Particulate Strainer",
+          "rating": "ASME Y-Pattern Stainless Mesh Core Housing",
+          "max_capacity": "740.3 Am3/hr structural limit",
+          "used_capacity": "528.8 Am3/hr",
+          "flow_rate": "650.0 kg/hr",
+          "pressure_drop": "0.08 bar",
+          "capex": 397600.00000000006,
+          "opex": 5.88,
+          "efficiency": "Estimated recovery contribution 76.2% with Duplex Guard Particulate Strainer sized for the stated duty."
+        },
+        {
+          "component": "PSA Cycle Feed Gas Compressor*",
+          "rating": "API 619 Heavy Duty Double-Helix Screw Machine",
+          "max_capacity": "160.0 kW Motor Enclosure",
+          "used_capacity": "84.2 kW Gas Energy",
+          "flow_rate": "650.0 kg/hr",
+          "pressure_drop": "-23.8 bar (Pressurize)",
+          "capex": 511200.00000000006,
+          "opex": 7.224,
+          "efficiency": "Estimated recovery contribution 76.2% with PSA Cycle Feed Gas Compressor* sized for the stated duty."
+        },
+        {
+          "component": "Twin Adsorber Beds (Interlocked)",
+          "rating": "ASME VIII Carbon Sieve / Zeolite Dual Bed System",
+          "max_capacity": "230.7 kg Vessel Volume",
+          "used_capacity": "142.6 kg Sieve Loaded",
+          "flow_rate": "650.0 kg/hr cyclical dynamic",
+          "pressure_drop": "0.12 bar",
+          "capex": 624800.0000000001,
+          "opex": 8.568000000000001,
+          "efficiency": "Estimated recovery contribution 76.2% with Twin Adsorber Beds (Interlocked) sized for the stated duty."
+        }
+      ],
+      "capex_total": 1420000,
+      "opex_total": 16.8,
+      "recovery_pct": 76.2
+    },
+    "absorption": {
+      "title": "Heavy-Gas Absorption",
+      "rows": [
+        {
+          "component": "Shell & Tube Feed Pre-Cooler",
+          "rating": "TEMA R-Type Shell, Duty: 5.7 kW Thermal",
+          "max_capacity": "15.2 m2 Design Geometry",
+          "used_capacity": "12.2 m2 Exchange Surface",
+          "flow_rate": "650.0 kg/hr Process Gas",
+          "pressure_drop": "0.05 bar",
+          "capex": 313600.00000000006,
+          "opex": 4.97,
+          "efficiency": "Estimated recovery contribution 72.8% with Shell & Tube Feed Pre-Cooler sized for the stated duty."
+        },
+        {
+          "component": "Absorber Packed Column Tower",
+          "rating": "Mellapak 250Y Structured Column Configuration",
+          "max_capacity": "1142.2 kg/hr Hydraulic flood limit",
+          "used_capacity": "650.0 kg/hr gas throughput",
+          "flow_rate": "Gas: 650.0 kg/hr | Liq: 1786.9 kg/hr",
+          "pressure_drop": "0.03 bar (6.0 mbar/m packing)",
+          "capex": 403200.00000000006,
+          "opex": 6.106,
+          "efficiency": "Estimated recovery contribution 72.8% with Absorber Packed Column Tower sized for the stated duty."
+        },
+        {
+          "component": "Lean/Rich Solvent Circulation Pumps",
+          "rating": "API 610 Centrifugal Single Stage Motor Package",
+          "max_capacity": "12.0 GPM Pump Curve Limit",
+          "used_capacity": "10.1 GPM Impeller Push",
+          "flow_rate": "1833.6 kg/hr fluid loop",
+          "pressure_drop": "-1.50 bar (Dynamic System Head)",
+          "capex": 492800.00000000006,
+          "opex": 7.242,
+          "efficiency": "Estimated recovery contribution 72.8% with Lean/Rich Solvent Circulation Pumps sized for the stated duty."
+        }
+      ],
+      "capex_total": 1120000,
+      "opex_total": 14.2,
+      "recovery_pct": 72.8
+    }
+  },
+  "technologies": {
+    "polymeric_membrane": [
+      {
+        "id": "V-301",
+        "component": "Feed Suction Knock-Out Drum",
+        "flow_rate": "650.0 kg/hr",
+        "capex_formatted": "Rs. 12.11 L",
+        "opex_formatted": "Rs. 10,020",
+        "pressure_drop": "0.02 bar",
+        "used_capacity": "528.8 Am3/hr",
+        "max_capacity": "740.3 Am3/hr limit",
+        "rating": "ASME Sec VIII Div 1, Vert Shell (600mm x 2.0m)",
+        "electricity": "0.00 kW"
+      },
+      {
+        "id": "K-301",
+        "component": "Feed Gas Booster Compressor",
+        "flow_rate": "650.0 kg/hr",
+        "capex_formatted": "Rs. 73.48 L",
+        "opex_formatted": "Rs. 118,570",
+        "pressure_drop": "-15.0 bar (Pressurize)",
+        "used_capacity": "67.4 kW Shaft Work",
+        "max_capacity": "110.0 kW Motor limit",
+        "rating": "API 619 Oil-Injected Screw Process Package",
+        "electricity": "67.4 kW"
+      },
+      {
+        "id": "F-301",
+        "component": "Coalescing Pre-Filter Element",
+        "flow_rate": "650.0 kg/hr",
+        "capex_formatted": "Rs. 7.68 L",
+        "opex_formatted": "Rs. 25,885",
+        "pressure_drop": "0.15 bar",
+        "used_capacity": "39.2 Am3/hr",
+        "max_capacity": "60.7 Am3/hr limit",
+        "rating": "0.5 Micron High-Pressure Particulate Shell",
+        "electricity": "0.00 kW"
+      },
+      {
+        "id": "M-301",
+        "component": "Polyimide Membrane Separator Skids",
+        "flow_rate": "Retentate: 604.4 kg/hr\nPermeate: 45.6 kg/hr",
+        "capex_formatted": "Rs. 53.44 L",
+        "opex_formatted": "Rs. 162,825",
+        "pressure_drop": "15.00 bar (Trans-membrane)",
+        "used_capacity": "537.6 m2 Active Area",
+        "max_capacity": "560.0 m2 Bank Barrier Matrix",
+        "rating": "ASME Multi-Tube Module Housing (14 Elements)",
+        "electricity": "0.00 kW"
+      }
+    ],
+    "pressure_swing_adsorption": [
+      {
+        "id": "Y-201",
+        "component": "Duplex Guard Particulate Strainer",
+        "flow_rate": "650.0 kg/hr",
+        "pressure_drop": "0.08 bar",
+        "capex_formatted": "Rs. 6.26 L",
+        "opex_formatted": "Rs. 6,680",
+        "used_capacity": "528.8 Am3/hr",
+        "max_capacity": "740.3 Am3/hr structural limit",
+        "rating": "ASME Y-Pattern Stainless Mesh Core Housing",
+        "electricity": "0.00 kW"
+      },
+      {
+        "id": "K-201",
+        "component": "PSA Cycle Feed Gas Compressor*",
+        "flow_rate": "650.0 kg/hr",
+        "capex_formatted": "Rs. 78.49 L",
+        "opex_formatted": "Rs. 137,775",
+        "pressure_drop": "-23.8 bar (Pressurize)",
+        "used_capacity": "84.2 kW Gas Energy",
+        "max_capacity": "160.0 kW Motor Enclosure",
+        "rating": "API 619 Heavy Duty Double-Helix Screw Machine",
+        "electricity": "84.2 kW"
+      },
+      {
+        "id": "V-201A/B",
+        "component": "Twin Adsorber Beds (Interlocked)",
+        "flow_rate": "650.0 kg/hr cyclical dynamic",
+        "capex_formatted": "Rs. 78.49 L",
+        "opex_formatted": "Rs. 137,775",
+        "pressure_drop": "0.12 bar",
+        "used_capacity": "142.6 kg Sieve Loaded",
+        "max_capacity": "230.7 kg Vessel Volume",
+        "rating": "ASME VIII Carbon Sieve / Zeolite Dual Bed System",
+        "electricity": "0.35 kW"
+      }
+    ],
+    "heavy_gas_absorption": [
+      {
+        "id": "E-101",
+        "component": "Shell & Tube Feed Pre-Cooler",
+        "flow_rate": "650.0 kg/hr Process Gas",
+        "capex_formatted": "Rs. 15.45 L",
+        "opex_formatted": "Rs. 35,070",
+        "pressure_drop": "0.05 bar",
+        "used_capacity": "12.2 m2 Exchange Surface",
+        "max_capacity": "15.2 m2 Design Geometry",
+        "rating": "TEMA R-Type Shell, Duty: 5.7 kW Thermal",
+        "electricity": "0.15 kW"
+      },
+      {
+        "id": "T-101",
+        "component": "Absorber Packed Column Tower",
+        "flow_rate": "Gas: 650.0 kg/hr | Liq: 1786.9 kg/hr",
+        "capex_formatted": "Rs. 15.45 L",
+        "opex_formatted": "Rs. 35,070",
+        "pressure_drop": "0.03 bar (6.0 mbar/m packing)",
+        "used_capacity": "650.0 kg/hr gas throughput",
+        "max_capacity": "1142.2 kg/hr Hydraulic flood limit",
+        "rating": "Mellapak 250Y Structured Column Configuration",
+        "electricity": "0.00 kW"
+      },
+      {
+        "id": "P-101A/B",
+        "component": "Lean/Rich Solvent Circulation Pumps",
+        "flow_rate": "1833.6 kg/hr fluid loop",
+        "capex_formatted": "Rs. 11.69 L",
+        "opex_formatted": "Rs. 48,430",
+        "pressure_drop": "-1.50 bar (Dynamic System Head)",
+        "used_capacity": "10.1 GPM Impeller Push",
+        "max_capacity": "12.0 GPM Pump Curve Limit",
+        "rating": "API 610 Centrifugal Single Stage Motor Package",
+        "electricity": "2.4 kW"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "cost_index_year": 2026,
+  "equipment_curves": {
+    "condensation_unit": {
+      "equipment_type": "Cryogenic Condensation & Mechanical Refrigeration Skid",
+      "base_cost_usd": 115000.0,
+      "base_capacity": 5.0,
+      "unit": "kmol_hc_condensed_hr",
+      "scaling_exponent": 0.62,
+      "material_factor": 1.3
+    },
+    "psa_system": {
+      "equipment_type": "Twin-Bed Pressure Swing Adsorption (PSA) Unit",
+      "base_cost_usd": 92000.0,
+      "base_capacity": 600.0,
+      "unit": "kg_adsorbent",
+      "scaling_exponent": 0.58,
+      "material_factor": 1.4
+    },
+    "membrane_skid": {
+      "equipment_type": "Hollow Fiber Polymeric Membrane Separation Skid",
+      "base_cost_usd": 48000.0,
+      "base_capacity": 15.0,
+      "unit": "m2_area",
+      "scaling_exponent": 0.65,
+      "material_factor": 1.2
+    },
+    "absorption_column": {
+      "equipment_type": "Packed Absorption Column & Solvent Stripper Skid",
+      "base_cost_usd": 135000.0,
+      "base_capacity": 3.0,
+      "unit": "m3_column_volume",
+      "scaling_exponent": 0.62,
+      "material_factor": 1.5
+    }
+  }
+}

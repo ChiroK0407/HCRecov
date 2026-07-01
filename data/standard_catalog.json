@@ -1,0 +1,8 @@
+{
+  "catalog_metadata": "Standard Industrial Process Equipment Procurement Limits",
+  "vessel_diameters_mm": [150, 200, 250, 300, 400, 500, 600, 750, 900, 1000, 1200, 1500],
+  "pump_motor_ratings_kw": [1.5, 2.2, 3.7, 5.5, 7.5, 11.0, 15.0, 18.5, 22.0, 30.0, 37.0, 45.0],
+  "compressor_motor_ratings_kw": [15.0, 22.0, 30.0, 37.0, 45.0, 55.0, 75.0, 90.0, 110.0, 132.0, 160.0],
+  "membrane_element_area_m2": 40.0,
+  "standard_vessel_lengths_m": [2.0, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0, 12.0]
+}
