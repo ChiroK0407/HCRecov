@@ -32,10 +32,10 @@ env/
 .DS_Store
 Thumbs.db
 
-.pdf
-.pptx
-.docx
-.md
+*.pdf
+*.pptx
+*.docx
+*.md
 
 # Node.js
 node_modules/
